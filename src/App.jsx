@@ -10,7 +10,7 @@ const FaceRecognition = () => {
   const [userDescriptionLoaded, setUserDescriptionLoaded] = useState(false);
   const [isFaceMatched, setFaceMatched] = useState(null);
   const [userDescription, setUserDescription] = useState(null);
-
+  const [multipleFace, setMultipleFace] = useState(false);
   // Load face-api model
   const loadModel = useCallback(async () => {
     const MODEL_URL = "https://justadudewhohacks.github.io/face-api.js/models";
@@ -91,7 +91,12 @@ const FaceRecognition = () => {
         if (context) {
           context.clearRect(0, 0, videoWidth, videoHeight);
           faceapi.draw.drawDetections(canvasRef.current, detections);
-
+          //multiple faces
+          if (detections.length > 1) {
+            setMultipleFace(true);
+          } else {
+            setMultipleFace(false);
+          }
           // Comparison
           if (detections.length > 0) {
             const matcher = new faceapi.FaceMatcher(userDescription, 0.6);
@@ -143,6 +148,11 @@ const FaceRecognition = () => {
           ? "❌ Face Not Recognized"
           : isFaceMatched}
       </p>
+      {multipleFace && (
+        <p className="text-xl mb-4 text-yellow-500 font-bold">
+          ⚠️ Multiple people detected in front of the webcam
+        </p>
+      )}
       <img
         id="user-image"
         src="/image/photo1.jpeg"
