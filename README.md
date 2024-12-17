@@ -72,10 +72,10 @@ Start the Development Server Run the project locally:
 
     npm start
 
-    Your app will be live at http://localhost:3000.
+    Your app will be live at http://localhost:5173.
 
 # How to Use
-
+    Upload the image in public folder
     Open the app in your browser.
     Allow camera access when prompted.
     A live webcam feed will display.
@@ -104,13 +104,6 @@ face-recognition-app/
 │
 ├── package.json           # Dependencies and scripts
 └── README.md              # Project documentation
-
-## Screenshots
-Real-Time Face Detection
-
-Access Granted Example
-
-Troubleshooting
 
     Error Loading Models:
         Ensure the model files are correctly placed in the /public/models folder or hosted online.
