@@ -43,10 +43,10 @@ Frontend
 
 Make sure these dependencies are installed in your project:
 
-npm install react react-dom
-npm install @vladmandic/face-api # face-api.js library
-npm install react-webcam         # Webcam component
-npm install tailwindcss          # Styling
+# npm install react react-dom
+# npm install @vladmandic/face-api # face-api.js library
+# npm install react-webcam         # Webcam component
+# npm install tailwindcss          # Styling
 
 ## Installation
 
