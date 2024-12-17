@@ -16,8 +16,6 @@ Table of Contents
     Tech Stack and Dependencies
     Installation
     How to Use
-    Folder Structure
-    Screenshots
     Troubleshooting
     License
 
@@ -54,7 +52,7 @@ Follow these steps to set up the project on your local machine:
 
     Clone the Repository
 
-git clone https://github.com/yourusername/face-recognition-app.git
+git clone https://github.com/karanmehta567/face-recognition-app.git
 cd face-recognition-app
 
 Install Dependencies Run the following command to install all required packages:
@@ -84,26 +82,7 @@ Start the Development Server Run the project locally:
         ✅ Access Granted: Face matches predefined data.
         ❌ Face Not Recognized: Face does not match.
         ⚠️ No Face Detected: No face is found in the feed.
-
-# Folder Structure
-
-The project follows a clean structure:
-
-face-recognition-app/
-│
-├── public/                # Public assets
-│   ├── models/            # face-api.js models
-│   └── image/             # Predefined face images
-│
-├── src/                   # Source code
-│   ├── components/        # React components
-│   ├── App.js             # Main application file
-│   ├── index.js           # Entry point
-│   ├── FaceRecognition.js # Face recognition logic
-│   └── styles/            # Tailwind CSS styles
-│
-├── package.json           # Dependencies and scripts
-└── README.md              # Project documentation
+         ⚠️ Multiple people detected in front of the webcam
 
     Error Loading Models:
         Ensure the model files are correctly placed in the /public/models folder or hosted online.
