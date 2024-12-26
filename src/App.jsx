@@ -83,7 +83,13 @@ const FaceRecognition = () => {
 
         // Perform face detection
         const detections = await faceapi
-          .detectAllFaces(video, new faceapi.TinyFaceDetectorOptions())
+          .detectAllFaces(
+            video,
+            new faceapi.TinyFaceDetectorOptions({
+              inputSize: 160, //increased the size for accuracy
+              scoreThreshold: 0.5,
+            })
+          )
           .withFaceLandmarks()
           .withFaceDescriptors();
 
@@ -99,7 +105,7 @@ const FaceRecognition = () => {
           }
           // Comparison
           if (detections.length > 0) {
-            const matcher = new faceapi.FaceMatcher(userDescription, 0.6);
+            const matcher = new faceapi.FaceMatcher(userDescription, 0.6); //making model strict
             const result = detections.map((detection) =>
               matcher.findBestMatch(detection.descriptor)
             );
@@ -130,7 +136,7 @@ const FaceRecognition = () => {
     if (modelLoaded && userDescriptionLoaded) {
       const interval = setInterval(() => {
         recognizeFace();
-      }, 500); // Check every 500ms
+      }, 200); // Check every 2 ms
 
       return () => clearInterval(interval);
     }
